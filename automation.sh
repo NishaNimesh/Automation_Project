@@ -11,3 +11,12 @@ timestamp=$(date '+%d%m%Y-%H%M%S')
 aws s3 \
 cp /tmp/${myname}-httpd-logs${timestamp}.tar \
 s3://${s3_bucket}/${myname}-httpd-logs${timestamp}.tar
+
+
+timestamp=$(date '+%d%m%Y-%H%M%S')
+file="Nisha-httpd-logs${timestamp}.tar"
+fileName="/tmp/$file"
+size=`du -k "$fileName" | cut -f1`
+sudo echo "httpd-logs ${timestamp} tar ${size}K">> /var/www/html/inventory.html 
+
+
