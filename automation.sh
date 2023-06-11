@@ -5,7 +5,7 @@ sudo service apache2 status
 timestamp=$(date '+%d%m%Y-%H%M%S')  
 sudo tar cvf "Nisha-httpd-logs${timestamp}.tar" "ubuntu\var\log\apache2\access"
 
-myname=nisha
+myname=Nisha
 s3_bucket=upgrad-nishanimesh
 timestamp=$(date '+%d%m%Y-%H%M%S') 
 aws s3 \
@@ -17,6 +17,6 @@ timestamp=$(date '+%d%m%Y-%H%M%S')
 file="Nisha-httpd-logs${timestamp}.tar"
 fileName="/tmp/$file"
 size=`du -k "$fileName" | cut -f1`
-sudo echo "httpd-logs ${timestamp} tar ${size}K">> /var/www/html/inventory.html 
+sudo echo "httpd-logs ${timestamp} tar ${size}K">> /var/www/html/inventory.html z
 
 
